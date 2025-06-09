@@ -18,7 +18,7 @@ A Chrome extension that displays the current Tailwind CSS breakpoint indicator o
 
 1. Clone this repository or download the source code
    ```bash
-   git clone https://github.com/yourusername/tailwind-dev-helper.git
+   git clone https://github.com/cjoberholzer/tailwind-dev-helper.git
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`
