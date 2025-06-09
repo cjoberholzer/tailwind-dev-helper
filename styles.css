@@ -1,0 +1,74 @@
+#tailwind-breakpoint-indicator {
+  position: fixed !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  background-color: black !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+#tailwind-breakpoint-indicator span {
+  display: none !important;
+}
+
+/* XS: Default (mobile first) */
+#tailwind-breakpoint-indicator .twi-xs {
+  display: block !important;
+}
+
+/* SM: 640px and up */
+@media (min-width: 640px) {
+  #tailwind-breakpoint-indicator .twi-xs {
+    display: none !important;
+  }
+  #tailwind-breakpoint-indicator .twi-sm {
+    display: block !important;
+  }
+}
+
+/* MD: 768px and up */
+@media (min-width: 768px) {
+  #tailwind-breakpoint-indicator .twi-sm {
+    display: none !important;
+  }
+  #tailwind-breakpoint-indicator .twi-md {
+    display: block !important;
+  }
+}
+
+/* LG: 1024px and up */
+@media (min-width: 1024px) {
+  #tailwind-breakpoint-indicator .twi-md {
+    display: none !important;
+  }
+  #tailwind-breakpoint-indicator .twi-lg {
+    display: block !important;
+  }
+}
+
+/* XL: 1280px and up */
+@media (min-width: 1280px) {
+  #tailwind-breakpoint-indicator .twi-lg {
+    display: none !important;
+  }
+  #tailwind-breakpoint-indicator .twi-xl {
+    display: block !important;
+  }
+}
+
+/* 2XL: 1536px and up */
+@media (min-width: 1536px) {
+  #tailwind-breakpoint-indicator .twi-xl {
+    display: none !important;
+  }
+  #tailwind-breakpoint-indicator .twi-2xl {
+    display: block !important;
+  }
+}

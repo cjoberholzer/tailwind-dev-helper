@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    h3 {
+      margin: 0 0 15px 0;
+      color: #1f2937;
+      font-size: 16px;
+    }
+    .toggle-section {
+      margin-bottom: 15px;
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .toggle-label {
+      font-size: 14px;
+      color: #374151;
+    }
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e5e7eb;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #3b82f6;
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .domain-input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .add-btn {
+      width: 100%;
+      padding: 8px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .add-btn:hover {
+      background: #2563eb;
+    }
+    .domain-list {
+      margin-top: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .domain-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 8px;
+      background: #f9fafb;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+    .remove-btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #dc2626;
+    }
+    .divider {
+      border-top: 1px solid #e5e7eb;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <h3>Tailwind Dev Helper</h3>
+
+  <div class="toggle-section">
+    <div class="toggle-row">
+      <span class="toggle-label">Enable on this site</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="currentSiteToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="toggle-row">
+      <span class="toggle-label">Enable globally</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="globalToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div>
+    <h4 style="margin: 0 0 10px 0; font-size: 14px;">Enabled Domains:</h4>
+    <input type="text" class="domain-input" id="domainInput" placeholder="example.com">
+    <button class="add-btn" id="addDomain">Add Domain</button>
+    <div class="domain-list" id="domainList"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
